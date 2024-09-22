@@ -24,14 +24,27 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'org.postgresql:postgresql'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	//POSTGRES
+	runtimeOnly 'org.postgresql:postgresql'
+
+	//LOMBOK
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	//JUNIT
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	//MAPSTRUCT
+	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+
+	//SWAGGER
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.1.0'
 }
 
 tasks.named('test') {
