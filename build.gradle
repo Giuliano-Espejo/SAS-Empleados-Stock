@@ -57,3 +57,17 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+jar {
+	manifest {
+		attributes 'GesApplication': 'com.gemt.ges.GesApplicataion'
+	}
+}
+
+tasks.jar {
+	enabled = true
+}
+
+bootJar {
+	enabled=true
+}
