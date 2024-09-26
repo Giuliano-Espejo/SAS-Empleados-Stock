@@ -60,7 +60,7 @@ tasks.named('test') {
 
 jar {
 	manifest {
-		attributes 'GesApplication': 'com.gemt.ges.GesApplicataion'
+		attributes 'GesApplication': 'com.gemt.ges.GesApplication'
 	}
 }
 
