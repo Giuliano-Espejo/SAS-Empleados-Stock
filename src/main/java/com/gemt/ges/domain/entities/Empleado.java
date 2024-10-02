@@ -3,7 +3,7 @@ package com.gemt.ges.domain.entities;
 import com.gemt.ges.domain.enums.Rol;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -27,4 +27,6 @@ public class Empleado extends Base{
     private Double sueldo;
     private String password;
     private Rol rol;
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    private Empresa empresa;
 }

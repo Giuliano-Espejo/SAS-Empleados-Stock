@@ -23,4 +23,5 @@ public class EmpleadoCreate {
     private Double sueldo;
     private String password;
     private Rol rol;
+    private Long idEmpresa;
 }

@@ -24,4 +24,5 @@ public class EmpleadoCompletoDto extends BaseDto {
     private Double sueldo;
     private String password;
     private Rol rol;
+    private Long idEmpresa;
 }

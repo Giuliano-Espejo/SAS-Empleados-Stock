@@ -1,0 +1,12 @@
+package com.gemt.ges.business.service;
+
+import com.gemt.ges.business.service.base.BaseService;
+import com.gemt.ges.domain.entities.Producto;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
+
+public interface ProductoService extends BaseService<Producto, Long> {
+    List<String> uploadImg(List<MultipartFile> files, Long idProducto);
+}
