@@ -6,7 +6,8 @@ import com.gemt.ges.business.service.base.BaseServiceImp;
 import com.gemt.ges.domain.entities.ImagenProducto;
 import com.gemt.ges.domain.entities.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -45,5 +46,10 @@ public class ProductoServiceImp extends BaseServiceImp<Producto, Long> implement
         return imagenesSubidas.stream()
                 .map(ImagenProducto::getUrl) // Extraer las URLs
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Page<Producto> findAllPage(Pageable pageable) {
+        return baseRepository.findAll(pageable);
     }
 }
