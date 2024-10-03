@@ -39,4 +39,12 @@ public class ProductoFacadeImp extends BaseFacadeImp<Producto, ProductoDto, Prod
         // Transformar el Page<Producto> a Page<ProductoDto>
         return productosPage.map(baseMapper::toDTO);
     }
+
+    @Override
+    public Page<ProductoDto> findAllByEmpresaId(Pageable pageable, Long idEmpresa) {
+        Page<Producto> productosPage = productoService.findAllByEmpresaId(pageable, idEmpresa);
+
+        // Transformar el Page<Producto> a Page<ProductoDto>
+        return productosPage.map(baseMapper::toDTO);
+    }
 }

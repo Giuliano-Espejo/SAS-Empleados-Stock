@@ -5,6 +5,7 @@ import com.gemt.ges.business.service.ProductoService;
 import com.gemt.ges.business.service.base.BaseServiceImp;
 import com.gemt.ges.domain.entities.ImagenProducto;
 import com.gemt.ges.domain.entities.Producto;
+import com.gemt.ges.repositories.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,6 +19,8 @@ import java.util.stream.Collectors;
 public class ProductoServiceImp extends BaseServiceImp<Producto, Long> implements ProductoService {
     @Autowired
     private CloudinaryService cloudinaryService;
+    @Autowired
+    private ProductoRepository productoRepository;
 
     @Override
     public List<String> uploadImg(List<MultipartFile> files, Long idProducto) {
@@ -51,5 +54,10 @@ public class ProductoServiceImp extends BaseServiceImp<Producto, Long> implement
     @Override
     public Page<Producto> findAllPage(Pageable pageable) {
         return baseRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Producto> findAllByEmpresaId(Pageable pageable, Long id) {
+        return productoRepository.findByEmpresaId(pageable, id);
     }
 }

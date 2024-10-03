@@ -12,4 +12,5 @@ import java.util.List;
 public interface ProductoService extends BaseService<Producto, Long> {
     List<String> uploadImg(List<MultipartFile> files, Long idProducto);
     Page<Producto> findAllPage(Pageable pageable);
+    Page<Producto> findAllByEmpresaId(Pageable pageable, Long id);
 }

@@ -15,4 +15,5 @@ import java.util.List;
 public interface ProductoFacade extends BaseFacade<ProductoDto, ProductoCreate, ProductoEdit, Long> {
     List<String> uploadImages(List<MultipartFile> files, Long idProducto);
     Page<ProductoDto> findAllPage(Pageable pageable);
+    Page<ProductoDto> findAllByEmpresaId(Pageable pageable, Long idEmpresa);
 }

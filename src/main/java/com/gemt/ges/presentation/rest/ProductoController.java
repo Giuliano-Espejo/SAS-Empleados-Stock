@@ -41,4 +41,10 @@ public class ProductoController extends BaseControllerImp<Producto, ProductoDto,
         return ResponseEntity.ok(productosDtoPage);
     }
 
+    @GetMapping("/getAllByEmpresaId/{empresaId}")
+    public ResponseEntity<Page<ProductoDto>> getAllByEmpresaId(Pageable pageable, @PathVariable Long empresaId) {
+        Page<ProductoDto> productosDtoPage = facade.findAllByEmpresaId(pageable, empresaId);
+        return ResponseEntity.ok(productosDtoPage);
+    }
+
 }
