@@ -17,4 +17,8 @@ public class CategoriaController extends BaseControllerImp<Categoria, CategoriaD
         super(facade);
     }
 
+    @GetMapping("/findByEmpresaId/{idEmpresa}")
+    public ResponseEntity<?> findByEmpresaId(@PathVariable Long idEmpresa){
+        return ResponseEntity.ok(facade.findByEmpresaId(idEmpresa));
+    }
 }
