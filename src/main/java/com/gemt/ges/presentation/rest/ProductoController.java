@@ -47,4 +47,33 @@ public class ProductoController extends BaseControllerImp<Producto, ProductoDto,
         return ResponseEntity.ok(productosDtoPage);
     }
 
+    @GetMapping("/findByCategoriaId/{categoriaId}")
+    public ResponseEntity<Page<ProductoDto>> findByCategoriaId(Pageable pageable, @PathVariable Long categoriaId) {
+        Page<ProductoDto> productosDtoPage = facade.findByCategoriaId(pageable, categoriaId);
+        return ResponseEntity.ok(productosDtoPage);
+    }
+
+    @GetMapping("/orderByStockMinimo/{empresaId}")
+    public ResponseEntity<Page<ProductoDto>> orderByStockMinimo(Pageable pageable, @PathVariable Long empresaId) {
+        Page<ProductoDto> productosDtoPage = facade.orderByStockMinimo(pageable, empresaId);
+        return ResponseEntity.ok(productosDtoPage);
+    }
+
+    @GetMapping("/orderByStockActual/{empresaId}")
+    public ResponseEntity<Page<ProductoDto>> orderByStockActual(Pageable pageable, @PathVariable Long empresaId) {
+        Page<ProductoDto> productosDtoPage = facade.orderByStockActual(pageable, empresaId);
+        return ResponseEntity.ok(productosDtoPage);
+    }
+
+    @GetMapping("/orderByCosto/{empresaId}")
+    public ResponseEntity<Page<ProductoDto>> orderByCosto(Pageable pageable, @PathVariable Long empresaId) {
+        Page<ProductoDto> productosDtoPage = facade.orderByCosto(pageable, empresaId);
+        return ResponseEntity.ok(productosDtoPage);
+    }
+
+    @GetMapping("/orderByPrecio/{empresaId}")
+    public ResponseEntity<Page<ProductoDto>> orderByPrecio(Pageable pageable, @PathVariable Long empresaId) {
+        Page<ProductoDto> productosDtoPage = facade.orderByPrecio(pageable, empresaId);
+        return ResponseEntity.ok(productosDtoPage);
+    }
 }

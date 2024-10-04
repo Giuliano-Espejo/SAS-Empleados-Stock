@@ -47,4 +47,44 @@ public class ProductoFacadeImp extends BaseFacadeImp<Producto, ProductoDto, Prod
         // Transformar el Page<Producto> a Page<ProductoDto>
         return productosPage.map(baseMapper::toDTO);
     }
+
+    @Override
+    public Page<ProductoDto> findByCategoriaId(Pageable pageable, Long categoriaId) {
+        Page<Producto> productosPage = productoService.findByCategoriaId(pageable, categoriaId);
+
+        // Transformar el Page<Producto> a Page<ProductoDto>
+        return productosPage.map(baseMapper::toDTO);
+    }
+
+    @Override
+    public Page<ProductoDto> orderByStockMinimo(Pageable pageable, Long empresaId) {
+        Page<Producto> productosPage = productoService.orderByStockMinimo(pageable, empresaId);
+
+        // Transformar el Page<Producto> a Page<ProductoDto>
+        return productosPage.map(baseMapper::toDTO);
+    }
+
+    @Override
+    public Page<ProductoDto> orderByStockActual(Pageable pageable, Long empresaId) {
+        Page<Producto> productosPage = productoService.orderByStockActual(pageable, empresaId);
+
+        // Transformar el Page<Producto> a Page<ProductoDto>
+        return productosPage.map(baseMapper::toDTO);
+    }
+
+    @Override
+    public Page<ProductoDto> orderByCosto(Pageable pageable, Long empresaId) {
+        Page<Producto> productosPage = productoService.orderByCosto(pageable, empresaId);
+
+        // Transformar el Page<Producto> a Page<ProductoDto>
+        return productosPage.map(baseMapper::toDTO);
+    }
+
+    @Override
+    public Page<ProductoDto> orderByPrecio(Pageable pageable, Long empresaId) {
+        Page<Producto> productosPage = productoService.orderByPrecio(pageable, empresaId);
+
+        // Transformar el Page<Producto> a Page<ProductoDto>
+        return productosPage.map(baseMapper::toDTO);
+    }
 }

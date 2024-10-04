@@ -13,4 +13,9 @@ public interface ProductoService extends BaseService<Producto, Long> {
     List<String> uploadImg(List<MultipartFile> files, Long idProducto);
     Page<Producto> findAllPage(Pageable pageable);
     Page<Producto> findAllByEmpresaId(Pageable pageable, Long id);
+    Page<Producto> findByCategoriaId(Pageable pageable, Long categoriaId);
+    Page<Producto> orderByStockMinimo(Pageable pageable, Long empresaId);
+    Page<Producto> orderByStockActual(Pageable pageable, Long empresaId);
+    Page<Producto> orderByCosto(Pageable pageable, Long empresaId);
+    Page<Producto> orderByPrecio(Pageable pageable, Long empresaId);
 }

@@ -60,4 +60,29 @@ public class ProductoServiceImp extends BaseServiceImp<Producto, Long> implement
     public Page<Producto> findAllByEmpresaId(Pageable pageable, Long id) {
         return productoRepository.findByEmpresaId(pageable, id);
     }
+
+    @Override
+    public Page<Producto> findByCategoriaId(Pageable pageable, Long categoriaId) {
+        return productoRepository.findByCategoriaId(pageable, categoriaId);
+    }
+
+    @Override
+    public Page<Producto> orderByStockMinimo(Pageable pageable, Long empresaId) {
+        return productoRepository.orderByStockMinimo(pageable,empresaId);
+    }
+
+    @Override
+    public Page<Producto> orderByStockActual(Pageable pageable, Long empresaId) {
+        return productoRepository.orderByStockActual(pageable,empresaId);
+    }
+
+    @Override
+    public Page<Producto> orderByCosto(Pageable pageable, Long empresaId) {
+        return productoRepository.orderByCosto(pageable,empresaId);
+    }
+
+    @Override
+    public Page<Producto> orderByPrecio(Pageable pageable, Long empresaId) {
+        return productoRepository.orderByPrecio(pageable, empresaId);
+    }
 }
