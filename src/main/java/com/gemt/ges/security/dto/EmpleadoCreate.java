@@ -1,4 +1,4 @@
-package com.gemt.ges.domain.dtos.empleado;
+package com.gemt.ges.security.dto;
 
 import com.gemt.ges.domain.enums.Rol;
 import lombok.*;

@@ -5,7 +5,7 @@ import com.gemt.ges.business.facade.base.BaseFacadeImp;
 import com.gemt.ges.business.mapper.BaseMapper;
 import com.gemt.ges.business.service.base.BaseService;
 import com.gemt.ges.domain.dtos.empleado.EmpleadoCompletoDto;
-import com.gemt.ges.domain.dtos.empleado.EmpleadoCreate;
+import com.gemt.ges.security.dto.EmpleadoCreate;
 import com.gemt.ges.domain.dtos.empleado.EmpleadoEdit;
 import com.gemt.ges.domain.entities.Empleado;
 import org.springframework.stereotype.Service;

@@ -22,7 +22,6 @@ public class EmpleadoCompletoDto extends BaseDto {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate fechaNacimiento;
     private Double sueldo;
-    private String password;
     private Rol rol;
     private Long idEmpresa;
 }

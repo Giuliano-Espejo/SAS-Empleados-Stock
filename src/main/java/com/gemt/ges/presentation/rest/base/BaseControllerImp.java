@@ -2,13 +2,11 @@ package com.gemt.ges.presentation.rest.base;
 
 import com.gemt.ges.business.facade.base.BaseFacadeImp;
 import com.gemt.ges.domain.dtos.BaseDto;
-import com.gemt.ges.domain.dtos.empleado.EmpleadoCreate;
 import com.gemt.ges.domain.entities.Base;
 import org.springframework.http.ResponseEntity;
 //import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.Serializable;
 import java.util.List;

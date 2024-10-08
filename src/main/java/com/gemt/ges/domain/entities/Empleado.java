@@ -7,8 +7,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;
+import java.util.Collection;
+import java.util.List;
 
 @Setter
 @Getter
@@ -16,7 +21,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-public class Empleado extends Base{
+public class Empleado extends Base implements UserDetails {
     private String nombre;
     private String apellido;
     private String dni;
@@ -29,4 +34,15 @@ public class Empleado extends Base{
     private Rol rol;
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Empresa empresa;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() { //que rol tiene mi usuario
+        return List.of(new SimpleGrantedAuthority((rol.name())));
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
 }
